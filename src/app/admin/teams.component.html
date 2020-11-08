@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<div class="row col-md-8">
+  <div class="row">
+    <h1>{{title}}</h1>
+    <h3>{{description}}</h3>
+  </div>
+  <div class="row" *ngFor="let item of itemsList | async">
+    <div class="col-md-8" >
+      <a [routerLink]="['/editteam', item.key]">{{item.Name}}</a>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-danger" (click)="deleteItem(item.key)">Delete</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row btn-group">
+    <button class="btn btn-primary" [routerLink]="['/editteam']">Add</button>
+  </div>
+</div>
